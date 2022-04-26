@@ -19,7 +19,7 @@ main{
 header{
     display:flex;
     width:100%;
-    justify-content: space-between;
+    justify-content: space-around;
     background: #313131;
     padding:.7em;
     font-size:1.3em;
@@ -27,9 +27,16 @@ header{
     top:0;
     margin-bottom:30px;
 }
+.menu-btn{
+    position: absolute;
+    left:25px;
+    top:13px;
+    background:#888;
+    border-radius:100%;
+}
+
 .header-logo{
     position: relative;
-    left:150px;
     top:7px;
 }
 .header-search{
@@ -45,21 +52,28 @@ header{
 .header-login{
     position: relative;
     top:7px;
-    right: 50px;;
 }
 
 /* nav */
 .navbar{
-    flex-basis:15%;
-    margin-top:25px;
+    display:none;
+}
+.showmenu{
+    width:200px;
+    height: 100vh;
+    position:fixed;
+    top: 71px;
+    display:flex;
+    flex-flow: wrap column;
+    background:rgba(17, 17, 17,.9)
 }
 ul{
+    position: relative;
+    top:25px;
     margin-bottom:50px;
     border-bottom: 1px solid #777;
 }
 li{
-    position:relative;
-    bottom:20px;
     margin-left:30px;
     list-style: none;
     margin-bottom:10px;
@@ -69,10 +83,11 @@ li{
 .content{
     display:flex;
     margin-left:30px;
-    max-width: 75%;
+    max-width: 100%;
 }
 .content__viewver{
-    flex-basis:70%;
+    flex-basis:60%;
+    margin-left:15px;
 }
 /* videos display */
 .content-video{
@@ -135,9 +150,7 @@ iframe{
     text-transform:uppercase ;
     border-radius: 5px;
 }
-.info-btn:focus{
-    animation: clicked .3s;
-}
+
 /* animation when is clicked on since i cant use js */
 @keyframes clicked {
     70%{
@@ -147,6 +160,10 @@ iframe{
         transform: scale(1);
     }
 }
+.subscribed{
+    background:#313131;
+    outline: 1px solid #888;
+}
 .info-extra a{
     color:rgba(250, 250, 250,.9);
     text-decoration: none;
@@ -154,24 +171,27 @@ iframe{
 
 /* recomentdation */
 .content__recomendation{
-    margin-left:50px;
-    flex-grow:1;
-    flex-shrink: 1;
+    margin-left:30px;
+    flex: 1 1 45%;
 }
 
 .recomendation{
     display:flex;
-    flex-flow:  wrap row;
+    flex-direction:row;
+    margin-bottom:10px;
 }
 .video-info{
     display:flex;
-    flex-flow: wrap column;
-    margin-left:15px;
+    flex-direction:column;
+    margin-left:10px;
 }
-.video-info h4{
+.video-info p:first-child{
+    font-size:1em;
     background:#555;
     padding:2px;
-    margin-bottom:5px;
+    margin-bottom:3.5px;
+    color:rgba(250, 250, 250,.9);
+    text-overflow: ellipsis;
 }
 .video-info h5{
     margin-bottom:10px;
